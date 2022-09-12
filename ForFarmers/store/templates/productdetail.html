@@ -21,7 +21,8 @@
         <div class="col-md-8">
             <h4>{{product.title}}</h4>
             <h5>Category: {{product.category}}</h5>
-            <h5>Price: <strike>Rs. {{product.marked_price}}</strike> Rs. {{product.selling_price}}</h5>
+             <h5>Total amount: {{product.view_count}} kg</h5>
+            <h5>Price: <strike>Tk. {{product.marked_price}}</strike> Tk. {{product.selling_price}}</h5>
             <hr>
              <p>{{product.description}}</p>
             <a href="{% url 'store:addtocart' product.id %}" class="btn btn-info">Add To Cart</a>

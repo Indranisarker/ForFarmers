@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}{{product.title}}{% endblock %}
+
+{% block content %}
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-4">
+            <img src="http://dreamnetbd.com/assets/img/pay/nagad.png" alt="", width="300",height="300">
+            <div class="row">
+
+            </div>
+        </div>
+        <div class="col-md-8">
+            <h3>Your order amount is Rs. {{order.total}}</h3>
+            <br>
+            <br>
+             <button id="payment-button"class="btn btn-info">Pay with Nagad</button>
+            <br>
+            <br>
+                <a href="/">Go to Home page</a>
+            <hr>
+
+        </div>
+    </div>
+
+</div>
+{% endblock %}

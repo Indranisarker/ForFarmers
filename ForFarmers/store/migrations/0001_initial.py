@@ -4,7 +4,14 @@ from django.conf import settings
 from django.db import migrations, models
 import django.db.models.deletion
 
-
+def create_customers(apps, schema_editor):
+    Customer = apps.get_model('app_name', 'Customer')
+    User = apps.get_model('auth', 'User')
+    customers = [
+        Customer(user=user, full_name=None, address=None)
+        for user in User.objects.filter(customer=None)
+    ]
+    Customer.objects.bulk_create(customers)
 class Migration(migrations.Migration):
 
     initial = True
